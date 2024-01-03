@@ -26,4 +26,6 @@ Function to plot all [mgcv::gam()] model smooth term.
 \code{labs} should be a named list of 1-element character vectors, with names corresponding to 
 term names and values the associated label to use. Currently, only 1D and 2D smooth terms can be 
 plotted.
+
+The intercept is added to the first model term, but not to subsequent terms.
 }

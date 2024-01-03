@@ -14,6 +14,8 @@
 #' term names and values the associated label to use. Currently, only 1D and 2D smooth terms can be 
 #' plotted.
 #' 
+#' The intercept is added to the first model term, but not to subsequent terms.
+#' 
 #' @export 
 #'
 plotSmoothTerms<-function(lstPredTermTbls,labs,dfrDat=NULL,ori="H",ci=0.80){

@@ -1,3 +1,19 @@
+#' 
+#' @title Predict values for a smooth term
+#' @description Function to predict values for a smooth term
+#' 
+#' @param model - [mgcv::gam()] model object
+#' @param dfr - dataframe with covariates at which to predict the smooth term
+#' @param term - name of the smooth term to do prediction for 
+#' @param intercept - flag (T/F) to include intercept in returned values
+#' 
+#' @return tibble dataframe (tbl_df object)
+#' 
+#' @importFrom dplyr bind_cols
+#' @importFrom dplyr mutate
+#' 
+#' @export
+#' 
 predSmoothTerm<-function(mdl,dfr,term,include_intercept=FALSE){
   prd = predict(mdl,dfr,
                 type="iterms",terms=term,se.fit=TRUE,

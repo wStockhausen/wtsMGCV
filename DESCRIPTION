@@ -12,8 +12,7 @@ Imports:
     dplyr,
     ggplot2,
     rlang,
-    scales,
-    wtsUtilities
+    stringr
 Suggests: 
 RoxygenNote: 7.2.3
 Roxygen2: list(markdown=TRUE)
