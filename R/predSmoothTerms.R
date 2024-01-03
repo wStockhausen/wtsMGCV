@@ -8,6 +8,8 @@
 #' @return named list with a tibble dataframe (tbl_df object) for each smooth term as elements.
 #' Names are the corresponding smooth term name.
 #' 
+#' @import mgcv 
+#' 
 #' @importFrom dplyr mutate
 #' 
 #' @export

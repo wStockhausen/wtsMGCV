@@ -17,7 +17,7 @@
 #' 
 createGridTbl<-function(...){
   n = ...length();
-  cat("length = ",n,"\n")
+  # cat("length = ",n,"\n")
   if ((n==1) && (is.list(...elt(1)))){
     #--grids given as a list
     lst = ...elt(1);
@@ -25,7 +25,7 @@ createGridTbl<-function(...){
     #--grids given as ...
     lst = rlang::dots_list(...,.named=TRUE);
   }
-  cat("nms = ",names(lst),"\n")
+  # cat("nms = ",names(lst),"\n")
   dfr = tidyr::expand_grid(!!!lst);
   names(dfr) = stringr::str_remove(names(lst),"grd_");
   return(dfr);

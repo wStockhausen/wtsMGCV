@@ -9,6 +9,8 @@
 #' 
 #' @return tibble dataframe (tbl_df object)
 #' 
+#' @import mgcv 
+#' 
 #' @importFrom dplyr bind_cols
 #' @importFrom dplyr mutate
 #' 
