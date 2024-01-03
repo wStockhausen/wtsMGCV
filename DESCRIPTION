@@ -1,0 +1,19 @@
+Package: wtsMGCV
+Type: Package
+Title: Functions for working with mgcv gam model output
+Version: 2024.01.03
+Date: 2024-01.03
+Author: William Stockhausen
+Maintainer: William Stockhausen <william.stockhausen@noaa.gov>
+Description: Contains functions for working with mgcv gam model output.
+License: MIT + file LICENSE
+Imports:
+    cowplot,
+    dplyr,
+    ggplot2,
+    rlang,
+    scales,
+    wtsUtilities
+Suggests: 
+RoxygenNote: 7.2.3
+Roxygen2: list(markdown=TRUE)
