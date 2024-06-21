@@ -16,6 +16,7 @@
 #' 
 #' @importFrom cowplot plot_grid
 #' @importFrom rlang sym
+#' @importFrom wtsPlots getStdTheme
 #' 
 #' @export 
 #'
@@ -26,13 +27,17 @@ plotSmoothTerm2D<-function(term,lstPredTermTbls,dfrDat=NULL,xlab=NULL,ylab=NULL,
   vars   = getVarsForSmoothTerms(term)[[1]];
   dci = (1-ci)/2;
   p1 = ggplot(dfrPrd,aes(x=!!rlang::sym(vars[1]),y=!!rlang::sym(vars[2]),z=value)) + geom_contour_filled() + 
-         geom_point(aes(x=!!rlang::sym(vars[1]),y=!!rlang::sym(vars[2])),data=dfrDat,
-                    colour="white",size=0.1,inherit.aes=FALSE) + 
-          xlab(xlab)+ylab(ylab)+labs(subtitle=paste0(term," value"));
+          xlab(xlab)+ylab(ylab)+labs(subtitle=paste0(term," value")) + 
+          wtsPlots::getStdTheme();
+  if (!is.null(dfrDat))
+     p = p + geom_point(aes(x=!!rlang::sym(vars[1]),y=!!rlang::sym(vars[2])),data=dfrDat,
+                        colour="white",size=0.1,inherit.aes=FALSE); 
   p2 = ggplot(dfrPrd,aes(x=!!rlang::sym(vars[1]),y=!!rlang::sym(vars[2]),z=se)) + geom_contour_filled() + 
-         geom_point(aes(x=!!rlang::sym(vars[1]),y=!!rlang::sym(vars[2])),data=dfrDat,
-                    colour="white",size=0.1,inherit.aes=FALSE) + 
-          xlab(xlab)+ylab(ylab)+labs(subtitle=paste0(term," se"));
+          xlab(xlab)+ylab(ylab)+labs(subtitle=paste0(term," se")) + 
+          wtsPlots::getStdTheme();
+  if (!is.null(dfrDat))
+    p = p + geom_point(aes(x=!!rlang::sym(vars[1]),y=!!rlang::sym(vars[2])),data=dfrDat,
+                       colour="white",size=0.1,inherit.aes=FALSE); 
   if (ori=="H"){
     pg = cowplot::plot_grid(p1,p2,nrow=1);
   } else {

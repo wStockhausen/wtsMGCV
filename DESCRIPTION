@@ -1,8 +1,8 @@
 Package: wtsMGCV
 Type: Package
 Title: Functions for working with mgcv gam model output
-Version: 2024.01.03
-Date: 2024-01.03
+Version: 2024.06.21
+Date: 2024-06-21
 Author: William Stockhausen
 Maintainer: William Stockhausen <william.stockhausen@noaa.gov>
 Description: Contains functions for working with mgcv gam model output.
@@ -15,5 +15,6 @@ Imports:
     rlang,
     stringr
 Suggests: 
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
+Encoding: UTF-8
 Roxygen2: list(markdown=TRUE)

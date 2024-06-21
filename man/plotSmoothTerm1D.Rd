@@ -4,7 +4,7 @@
 \alias{plotSmoothTerm1D}
 \title{Plot a [mgcv::gam()] model smooth 1D term}
 \usage{
-plotSmoothTerm1D(term, lstPredTermTbls, dfrDat, xlab = NULL, ci = 0.8)
+plotSmoothTerm1D(term, lstPredTermTbls, dfrDat = NULL, xlab = NULL, ci = 0.8)
 }
 \arguments{
 \item{term}{- name of smooth 1D term to plot}

@@ -1,6 +1,6 @@
 #' 
 #' @title Plot all [mgcv::gam()] model smooth terms
-#' @description Function to plot all [mgcv::gam()] model smooth term.
+#' @description Function to plot all [mgcv::gam()] model smooth terms.
 #' 
 #' @param lstPredTermTbls - list of dataframes with predicted values for terms (or single dataframe)
 #' @param labs - list of axis labels for covariates

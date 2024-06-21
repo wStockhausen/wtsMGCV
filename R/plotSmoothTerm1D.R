@@ -14,19 +14,22 @@
 #' 
 #' @import ggplot2
 #' 
-#' @importFrom rlang sym
+#' @importFrom rlang sym 
+#' @importFrom wtsPlots getStdTheme
 #' 
 #' @export 
 #'
-plotSmoothTerm1D<-function(term,lstPredTermTbls,dfrDat,xlab=NULL,ci=0.80){
+plotSmoothTerm1D<-function(term,lstPredTermTbls,dfrDat=NULL,xlab=NULL,ci=0.80){
   dfrPrd = lstPredTermTbls[[term]];
   vars   = getVarsForSmoothTerms(term)[[1]];
   dci = (1-ci)/2;
   p = ggplot(dfrPrd,aes(x=!!rlang::sym(vars[1]),y=value,ymin=qnorm(dci,value,se),ymax=qnorm(1-dci,value,se))) + 
         geom_line() + geom_ribbon(alpha=0.2) + 
-        geom_rug(aes(x=!!rlang::sym(vars[1]),y=0),data=dfrDat,position=position_jitter(height=0),
-                 inherit.aes=FALSE,alpha=0.2) + 
-        xlab(xlab) + ylab(term);
+        xlab(xlab) + ylab(term) + 
+        wtsPlots::getStdTheme();
+  if (!is.null(dfrDat))      
+    p = p+ geom_rug(aes(x=!!rlang::sym(vars[1]),y=0),data=dfrDat,position=position_jitter(height=0),
+                    inherit.aes=FALSE,alpha=0.2);
   return(p);
 }
 #--plotSmoothTerm1D("ti(z)",lstTermTbls,dfrDat,xlab="size (mm CW)")

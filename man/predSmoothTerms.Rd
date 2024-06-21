@@ -2,7 +2,7 @@
 % Please edit documentation in R/predSmoothTerms.R
 \name{predSmoothTerms}
 \alias{predSmoothTerms}
-\title{Predict values for a smooth term}
+\title{Predict values for all smooth terms}
 \usage{
 predSmoothTerms(model, grids)
 }
@@ -16,5 +16,10 @@ named list with a tibble dataframe (tbl_df object) for each smooth term as eleme
 Names are the corresponding smooth term name.
 }
 \description{
-Function to predict values for a smooth term
+Function to predict values for all smooth term
+}
+\details{
+The intercept is included in the first smooth term, but not in subsequent terms.
+For each smooth term, [createGrdTbl] is used to expand the 1d covariate grids as necessary 
+to predict values for the smooth term across the expanded grid.
 }

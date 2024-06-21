@@ -19,7 +19,7 @@ plotSmoothTerms(lstPredTermTbls, labs, dfrDat = NULL, ori = "H", ci = 0.8)
 list of ggplot2 plot objects (all of class gg)
 }
 \description{
-Function to plot all [mgcv::gam()] model smooth term.
+Function to plot all [mgcv::gam()] model smooth terms.
 }
 \details{
 \code{lstPredTermTbls} should be a list (of dataframes) from running [predSmoothTerms()]. 
