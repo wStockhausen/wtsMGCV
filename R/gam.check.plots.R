@@ -53,7 +53,7 @@ gam.check.plots<-function(
     
     p1 = ggplot(dfr,aes(x=linpred,y=resid)) + 
            geom_point(alpha=0.4) + 
-           geom_hline(yintercept=0, colour="red",linetype=3) 
+           geom_hline(yintercept=0, colour="red",linetype=3) +
            labs(x="linear predictor",y="residuals") + 
            wtsPlots::getStdTheme();
     
@@ -65,8 +65,8 @@ gam.check.plots<-function(
     pr = dnorm(xs,mn,sd)/dnorm(mn,mn,sd);
     p2 = ggplot(dfr,aes(x=resid,y=after_stat(ndensity))) + 
            geom_histogram(colour="black",fill="grey") + 
-           geom_line(data=data.frame(x=xs,y=pr),aes(x=x,y=pr),colour=3,linetype=3,inherit.aes=FALSE) + 
-           geom_vline(xintercept=mn,colour=3,linetype=3) + 
+           geom_line(data=data.frame(x=xs,y=pr),aes(x=x,y=pr),colour="red",linetype=1,inherit.aes=FALSE) + 
+           geom_vline(xintercept=mn,colour="red",linetype=2) + 
            labs(x="residuals",y="normalized density") + 
            wtsPlots::getStdTheme();
     
@@ -81,7 +81,7 @@ gam.check.plots<-function(
     dfr = data.frame(x=fv,y=napredict(b$na.action, b$y));
     p3 = ggplot(dfr,aes(x,y)) + 
            geom_point(alpha=0.4) + 
-           geom_abline(slope=1,colour=3,linetype=3) + 
+           geom_abline(slope=1,colour="red",linetype=2) + 
            labs(x="fitted values",y="response") + 
            wtsPlots::getStdTheme();
     
