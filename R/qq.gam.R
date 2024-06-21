@@ -45,7 +45,7 @@ qq.gam <- function(object,
                   "Falling back to normal QQ plot."));
     dfr = data.frame(D=D);
     p = ggplot(dfr,aes(sample=D)) + geom_qq() + 
-          geom_abline(slope=1,intercept=0,linetype=3,colour="red") + 
+          geom_abline(slope=1,intercept=0,linetype=2,colour="red") + 
           scale_x_continuous(breaks=seq(-1000,1000,1)) + 
           labs(x="theoretical quantiles",y=ylab) + 
           scale_y_continuous(breaks=seq(-1000,1000,1)) + 

@@ -53,7 +53,7 @@ gam.check.plots<-function(
     
     p1 = ggplot(dfr,aes(x=linpred,y=resid)) + 
            geom_point(alpha=0.4) + 
-           geom_hline(yintercept=0, colour="red",linetype=3) +
+           geom_hline(yintercept=0, colour="red",linetype=2) +
            labs(x="linear predictor",y="residuals") + 
            wtsPlots::getStdTheme();
     
